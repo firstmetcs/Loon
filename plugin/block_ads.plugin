@@ -1,6 +1,6 @@
 #!name=去广告补充
 #!desc=针对部分APP和小程序广告进行拦截
-#!rule-details=大麦, 豆瓣
+#!rule-details=大麦, 豆瓣, 同程旅行
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
@@ -22,6 +22,21 @@
 ^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner reject
 ^https?:\/\/erebor\.douban\.com\/count\/\?ad= reject
 
+# > 同程旅行
+# hostname = *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
+# 开屏广告
+^https?:\/\/wx\.17u\.cn\/xcxhomeapi\/((aggregator\/index)|(home\/(screen|banner|converge)))$ reject
+^https?:\/\/wx\.17u\.cn\/crapi\/query\/getAdImgUrlByCode reject-dict
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen reject-dict
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist reject-dict
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend reject-dict
+# 景点界面轮播图和右下角悬浮窗
+^https:\/\/mobileapi\.ly\.com\/wlfrontend\/app\/scenicMain reject-dict
+# 租车界面 广告
+^https:\/\/wx\.17u\.cn\/crapi\/query\/ad reject-dict
+# 酒店界面广告
+^https:\/\/mobilehotelapi\.elong\.com\/appHotel\/adx\/advert\/getAdvert reject-dict
+
 [MITM]
-hostname = acs.m.taobao.com, amdc.m.taobao.com, api.douban.com
+hostname = acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
 
