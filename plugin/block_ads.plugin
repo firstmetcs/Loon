@@ -1,12 +1,16 @@
 #!name=去广告补充
 #!desc=针对部分APP和小程序广告进行拦截
-#!rule-details=大麦, 豆瓣, 同程旅行, 招商银行, 掌上生活
+#!rule-details=贝壳找房, 大麦, 豆瓣, 同程旅行, 招商银行, 掌上生活
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
 [Rule]
 
 [URL Rewrite]
+
+# > 贝壳找房
+# hostname = apps.api.ke.com
+^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) reject
 
 # > 大麦
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
@@ -54,5 +58,5 @@
 ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId reject-dict
 
 [MITM]
-hostname = acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
+hostname = apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
 
