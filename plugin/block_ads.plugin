@@ -1,6 +1,6 @@
 #!name=去广告补充
 #!desc=针对部分APP和小程序广告进行拦截
-#!rule-details=贝壳找房, 大麦, 豆瓣, 乐刻, 同程旅行, 招商银行, 掌上生活
+#!rule-details=贝壳找房, 大麦, 豆瓣, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
@@ -25,6 +25,15 @@
 ^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ reject
 ^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner reject
 ^https?:\/\/erebor\.douban\.com\/count\/\?ad= reject
+
+# > 盒马
+# hostname = acs.m.taobao.com, acs-m.freshippo.com
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.hippotown\.tabbar\.info reject
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage reject-200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity reject-dict
 
 # > 乐刻
 # hostname = lens.leoao.com
@@ -65,5 +74,5 @@
 ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId reject-dict
 
 [MITM]
-hostname = apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, lens.leoao.com, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
+hostname = apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
 
