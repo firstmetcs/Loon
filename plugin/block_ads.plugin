@@ -1,5 +1,5 @@
 #!name=去广告补充
-#!desc=针对部分APP和小程序广告进行拦截
+#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活
 #!rule-details=贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
@@ -8,9 +8,13 @@
 
 [URL Rewrite]
 
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+
 # > 贝壳找房
 # hostname = apps.api.ke.com
 ^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) reject
+
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
 
 # > 大麦
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
@@ -26,6 +30,8 @@
 ^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner reject
 ^https?:\/\/erebor\.douban\.com\/count\/\?ad= reject
 
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+
 # > 饿了么
 # hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
 # 开屏广告
@@ -40,6 +46,8 @@
 ^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ reject
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) reject
 
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.hippotown\.tabbar\.info reject
@@ -49,12 +57,16 @@
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend reject-dict
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity reject-dict
 
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+
 # > 乐刻
 # hostname = lens.leoao.com
 # 开屏广告
 ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService\/getAppAdvertisingNew reject-dict
 ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.bff\.ClientFrontFacade\/queryHomeMiddleInfo reject-dict
 ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AdvertiseConfigFrontService\/getAdvertiseConfigNew reject-dict
+
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
 
 # > 美团 & 美团外卖
 # hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
@@ -65,6 +77,8 @@
 ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ reject-dict
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends reject-dict
+
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
 
 # > 同程旅行
 # hostname = *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
@@ -80,6 +94,8 @@
 ^https:\/\/wx\.17u\.cn\/crapi\/query\/ad reject-dict
 # 酒店界面广告
 ^https:\/\/mobilehotelapi\.elong\.com\/appHotel\/adx\/advert\/getAdvert reject-dict
+
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
 # > 招商银行
 # hostname = webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com
