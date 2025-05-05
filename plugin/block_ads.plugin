@@ -4,17 +4,23 @@
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
+
 [Rule]
 
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+
 # > 中国银行
+# 需卸载重装，有缓存
+# 屏蔽首页杂七杂八的推荐和热门活动等
 DOMAIN,openapi.boc.cn,REJECT
 
-[URL Rewrite]
+[Rewrite]
 
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 
 # > 贝壳找房
 # hostname = apps.api.ke.com
+# 需卸载重装，有缓存
 ^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) reject
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
@@ -116,5 +122,5 @@ DOMAIN,openapi.boc.cn,REJECT
 # 首页随机弹窗
 ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId reject-dict
 
-[MITM]
+[MitM]
 hostname = apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
