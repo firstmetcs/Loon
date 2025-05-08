@@ -1,6 +1,6 @@
 #!name=去广告补充
-#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行
-#!rule-details=贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行
+#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通
+#!rule-details=贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
@@ -122,5 +122,14 @@ DOMAIN,openapi.boc.cn,REJECT
 # 首页随机弹窗
 ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId reject-dict
 
+# > 中国联通
+# hostname = m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
+^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) reject-img
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/getclientconfig\.htm reject-dict
+^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) reject-img
+^https?:\/\/[^(apple|10010)]+\.(com|cn)\/(a|A)d(s|v)?(\/|\.js) reject-img
+^https?:\/\/m1\.ad\.10010\.com\/noticeMag\/images\/imageUpload\/2\d{3} reject-img
+^https?:\/\/res\.mall\.10010\.cn\/mall\/common\/js\/fa\.js?referer= reject-img
+
 [MitM]
-hostname = apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
+hostname = apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
