@@ -1,6 +1,6 @@
 #!name=去广告补充
-#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通
-#!rule-details=12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通
+#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通, 中国移动
+#!rule-details=12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通, 中国移动
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
@@ -137,5 +137,12 @@ DOMAIN,openapi.boc.cn,REJECT
 ^https?:\/\/m1\.ad\.10010\.com\/noticeMag\/images\/imageUpload\/2\d{3} reject-img
 ^https?:\/\/res\.mall\.10010\.cn\/mall\/common\/js\/fa\.js?referer= reject-img
 
+# > 中国移动
+# hostname = client.app.coc.10086.cn, app.10086.cn
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit reject-200
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList reject
+# 多个悬浮窗
+^https?:\/\/(client\.app\.coc|app)\.10086\.cn\/biz-orange\/DN\/emotionMarket reject
+
 [MitM]
-hostname = gab.122.gov.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
+hostname = gab.122.gov.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn
