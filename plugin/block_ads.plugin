@@ -45,6 +45,8 @@ DOMAIN,openapi.boc.cn,REJECT
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome reject-200
 ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110 reject
+# https://github.com/sooyaaabo/Loon/blob/main/Plugin/MyBlockAds.plugin 99f6aad
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get reject-200
 
 # > 豆瓣
 # hostname = api.douban.com
