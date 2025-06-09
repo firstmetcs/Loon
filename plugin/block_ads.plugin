@@ -7,6 +7,16 @@
 
 [Rule]
 
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# 饿了么
+# https://github.com/sooyaaabo/Loon/blob/main/Plugin/MyBlockAds.plugin 99f6aad
+AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "eleme*")), REJECT
+URL-REGEX, "^https?:\/\/elemecdn.com\/.+\/sitemap", REJECT
+URL-REGEX, "^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4}", REJECT
+URL-REGEX, "^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4}", REJECT
+URL-REGEX, "^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\?", REJECT
+URL-REGEX, "^https?:\/\/www1\.elecfans\.com\/www\/delivery\/", REJECT
+
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
 # > 中国银行
