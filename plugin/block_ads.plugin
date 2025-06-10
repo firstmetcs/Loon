@@ -126,6 +126,10 @@ DOMAIN,openapi.boc.cn,REJECT
 ^https:\/\/wx\.17u\.cn\/crapi\/query\/ad reject-dict
 # 酒店界面广告
 ^https:\/\/mobilehotelapi\.elong\.com\/appHotel\/adx\/advert\/getAdvert reject-dict
+# app首页弹窗
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/appPopup reject-dict
+# 我的页面 出行灵感
+^https:\/\/tcmobileapi\.17usoft\.com\/userextend\/member\/myIndex\/feeds reject-dict
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
