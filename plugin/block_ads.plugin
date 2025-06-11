@@ -130,6 +130,8 @@ DOMAIN,openapi.boc.cn,REJECT
 ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/appPopup reject-dict
 # 我的页面 出行灵感
 ^https:\/\/tcmobileapi\.17usoft\.com\/userextend\/member\/myIndex\/feeds reject-dict
+# 搜索框热词
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getsearchboxtext reject-dict
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
