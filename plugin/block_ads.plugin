@@ -92,6 +92,7 @@ DOMAIN,openapi.boc.cn,REJECT
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice reject-dict
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend reject-dict
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.queryindexpage\/ response-body-json-del data.secondFloor data.showSecondFloor
 
 # >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
 
