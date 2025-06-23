@@ -1,6 +1,6 @@
 #!name=去广告补充
-#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通, 中国移动
-#!rule-details=12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 中国联通, 中国移动
+#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 智慧停车场管理系统, 中国联通, 中国移动
+#!rule-details=12123, 贝壳找房, 大麦, 豆瓣, 饿了么, 盒马, 乐刻, 同程旅行, 招商银行, 掌上生活, 中国银行, 智慧停车场管理系统, 中国联通, 中国移动
 #!author=奶思[https://github.com/fmz200]
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
@@ -159,6 +159,13 @@ https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get response-bo
 # 首页随机弹窗
 ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId reject-dict
 
+# > 智慧停车场管理系统
+# hostname = adver.cxzntc.com, api.zzspider.com, wx.gateway.cxyun.net.cn
+^http:\/\/adver\.cxzntc\.com:8182\/adver\/post\/postAdver reject-dict
+^https?:\/\/api\.zzspider\.com\/xl-api\/1\.0\/advertising\/advertising\/pull reject-dict
+^http:\/\/wx\.gateway\.cxyun\.net\.cn\/Scripts\/advert\/zzad\.bundle\.min\.js reject
+^http:\/\/wx\.gateway\.cxyun\.net\.cn\/Scripts\/advert\/common\.js reject
+
 # > 中国联通
 # hostname = m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) reject-img
@@ -184,4 +191,4 @@ https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get response-bo
 http-response ^https?:\/\/acs(\.|-)m\.(?:taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?:index|my)page script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/Freshippo/Freshippo.js, requires-body = true, tag = 盒马
 
 [MitM]
-hostname = gab.122.gov.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn
+hostname = gab.122.gov.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, adver.cxzntc.com, api.zzspider.com, wx.gateway.cxyun.net.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn
