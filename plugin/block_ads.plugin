@@ -104,7 +104,8 @@ https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get response-bo
 ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.bff\.ClientFrontFacade\/queryHomeMiddleInfo reject-dict
 ^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AdvertiseConfigFrontService\/getAdvertiseConfigNew reject-dict
 # 墨鱼去开屏2.0 https://github.com/sooyaaabo/Loon/blob/main/Plugin/StartUpAds.plugin
-^https?:\/\/lens\.leoao\.com\/lens\/.+(getUserScheme|queryAppBanners|Advert|popup) reject-200
+^https?:\/\/lens\.leoao\.com\/lens\/.+(queryAppBanners|Advert|popup) reject-200
+^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.SchemeFrontJsonRpc\/getUserScheme response-body-json-jq jq-path="https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/jqlang/leoao_remove_ads.jq"
 
 # >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
 
