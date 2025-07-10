@@ -1,0 +1,59 @@
+#!name = 其他部分网页广告
+#!desc = 过滤部分18🚫网页广告
+#!openUrl = 
+#!author = RuCu6[https://github.com/RuCu6], limbopro[https://github.com/limbopro], ddgksf2013[https://github.com/ddgksf2013], ZenmoFeiShi[https://github.com/ZenmoFeiShi], kokoryh[https://github.com/kokoryh]
+#!tag = 去广告
+#!system = 
+#!system_version = 
+#!loon_version = 3.3.2(877)
+#!homepage = https://github.com/firstmetcs/Loon/
+#!icon = https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/ban.jpeg
+#!date = 2025-06-15 00:00
+
+# 2024-11-29 01:37
+# https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/18hlw.snippet
+# 2024-10-04 01:25
+# https://raw.githubusercontent.com/RuCu6/Loon/main/Plugins/webpage.plugin
+# 2024-02-19
+# https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/WebAdBlock.conf
+# 2024-02-24
+# https://raw.githubusercontent.com/kokoryh/Sparkle/master/release/surge/module/missav.sgmodule
+
+[Rule]
+# -----------kokoryh----------- #
+# MissAV
+DOMAIN-SUFFIX, creative.myavlive.com, REJECT
+DOMAIN-SUFFIX, trackwilltrk.com, REJECT
+DOMAIN-SUFFIX, tsyndicate.com, REJECT
+
+[Rewrite]
+# -----------Rucu6----------- #
+# PornHub (https://cn.pornhub.com/) //*.pornhub.com
+^https:\/\/(?:cn|www)\.pornhub\.com\/_xa\/ads(_batch)?\? reject
+
+# Avple 跳转弹窗 //asserts.avple.tv
+^https:\/\/asserts\.avple\.tv\/file\/avple-images\/ad\.js reject
+
+# -----------ddgksf2013----------- #
+# PornHub - https://cn.pornhub.com
+^https?:\/\/(cn|www)\.pornhub\.com\/_xa\/ads reject-dict
+
+[Script]
+# -----------kokoryh----------- #
+# MissAV
+http-response ^https:\/\/missav\.(?:ai|ws)\/(?!(build|fonts|img|js|api|cdn-cgi)\/). script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/missav.html.js, requires-body = true, tag = MissAV
+
+# -----------ZenmoFeiShi----------- #
+# 黑料网
+http-response ^https:\/\/18hlw\.com\/?$ script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/18hlw.js, requires-body = true, tag = 黑料不打烊
+http-response ^https:\/\/18hlw\.com\/archives\/\d+\.html script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/18hlw.js, requires-body = true, tag = 黑料不打烊
+
+# -----------RuCu6----------- #
+# JavDB //javdb.com
+http-response ^https:\/\/javdb\.com\/(?!over18\?) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/WebPage/JavDB.js, requires-body = true, tag = JavDB
+
+# PornHub - https://cn.pornhub.com
+http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path = https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js, requires-body = true, tag = PornHub
+
+[MitM]
+hostname = missav.ai, missav.ws, 18hlw.com, asserts.avple.tv, javdb.com, *.pornhub.com
