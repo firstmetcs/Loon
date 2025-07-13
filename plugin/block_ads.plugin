@@ -150,7 +150,9 @@ https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get response-bo
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
 # > 招商银行
-# hostname = webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com
+# hostname = s3gw.cmbimg.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com
+# 开屏广告
+^https:\/\/s3gw\.cmbimg\.com\/mbappinitads\/ reject
 # 开屏广告
 ^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig reject-200
 # 首页横幅广告
@@ -201,4 +203,4 @@ http-response ^https?:\/\/acs(\.|-)m\.(?:taobao|freshippo)\.com\/gw\/mtop\.wdk\.
 http-response ^https?:\/\/.*v2ex\.com\/($|t\/\d+) script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/v2ex_remove_ads.js, requires-body = true, tag = v2ex
 
 [MitM]
-hostname = gab.122.gov.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, adver.cxzntc.com, api.zzspider.com, wx.gateway.cxyun.net.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn, *.v2ex.com, v2ex.com
+hostname = gab.122.gov.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, s3gw.cmbimg.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, adver.cxzntc.com, api.zzspider.com, wx.gateway.cxyun.net.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn, *.v2ex.com, v2ex.com
