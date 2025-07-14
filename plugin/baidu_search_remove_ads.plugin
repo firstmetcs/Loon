@@ -1,0 +1,21 @@
+#!name=百度搜索去广告
+#!desc=移除搜索首页广告、搜索结果广告。
+#!openUrl=https://apps.apple.com/app/id416048305
+#!author=毒奶[https://github.com/limbopro]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/limbopro/Adblock4limbo
+#!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/baidu.png
+#!date=2025-07-14 14:21:35
+
+[Script]
+
+# 搜索首页广告(www.baidu.com)  
+http-response https?:\/\/(www|m)\.baidu\.com(/$|\/\?ref.*)  script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/baidu_search_remove_ads.js, requires-body = true, tag = 搜索首页
+# 搜索结果广告(www.baidu.com)  
+http-response https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)  script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/baidu_search_remove_ads.js, requires-body = true, tag = 搜索结果
+
+[MitM]
+hostname=www.baidu.com, m.baidu.com
