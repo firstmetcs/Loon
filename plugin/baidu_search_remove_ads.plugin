@@ -15,6 +15,9 @@
 # 禁止打开百度app以及无痕模式的弹窗
 ^https?:\/\/s\.bdstatic\.com\/common\/openjs\/openBox\.js reject
 
+# 解决加载速度慢的问题
+^https?:\/\/efe-h2\.cdn\.bcebos\.com\/ceug\/resource\/res\/ reject
+
 [Script]
 
 # 搜索首页广告(www.baidu.com)  
@@ -23,4 +26,4 @@ http-response https?:\/\/(www|m)\.baidu\.com(/$|\/\?ref.*)  script-path = https:
 http-response https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)  script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/baidu_search_remove_ads.js, requires-body = true, tag = 搜索结果
 
 [MitM]
-hostname=s.bdstatic.com, www.baidu.com, m.baidu.com
+hostname=s.bdstatic.com, efe-h2.cdn.bcebos.com, www.baidu.com, m.baidu.com
