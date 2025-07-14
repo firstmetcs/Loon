@@ -1,6 +1,6 @@
 var css = {
     baidu_search: "div[style*=fixed],.ec_ad_results {display:none !important;} ", // baidu
-    baidu_index: "a[data-tclog] > img, #foot, .recordcode, .index-copyright, div[style*='overflow'], .rn-container, .s-loading-frame.bottom {display:none !important;}",
+    baidu_index: "a[data-tclog] > img, #login-wraps, div[style*='overflow'], .rn-container, .s-loading-frame.bottom {display:none !important;}",
 }
         
 
