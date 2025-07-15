@@ -49,6 +49,7 @@ DOMAIN,openapi.boc.cn,REJECT
 # hostname = apps.api.ke.com
 # 需卸载重装，有缓存
 ^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) reject
+^https?:\/\/apps\.api\.ke\.com\/api\/proxy\/ershou\/app\/ershoufang\/broadcast\/info\?houseCode= response-body-json-jq 'if .data.info.bottomText == "直播回放中" then del(.data) else . end'
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
 
