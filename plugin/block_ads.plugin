@@ -59,7 +59,9 @@ DOMAIN,openapi.boc.cn,REJECT
 ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110 reject
 # https://github.com/sooyaaabo/Loon/blob/main/Plugin/MyBlockAds.plugin 99f6aad
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get reject-200
+# 下拉刷新二楼
 https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get response-body-json-del data.data.top.pioneerEntrance
+https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-del data.data.top.pioneerEntrance
 
 # > 豆瓣
 # hostname = api.douban.com
@@ -153,7 +155,6 @@ https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get response-bo
 # > 微博补充 (hostname = api.weibo.cn)
 ^https?:\/\/api\.weibo\.cn\/2\/statuses\/container_detail\? response-body-json-jq '.pageHeader.data.items |= map(select(.data.is_ad_card != 1))'
 ^https?:\/\/api\.weibo\.cn\/2\/statuses\/container_detail_comment\? response-body-json-jq '.items |= map(select(.type != "trend"))'
-
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
