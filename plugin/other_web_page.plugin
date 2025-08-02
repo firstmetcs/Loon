@@ -55,5 +55,10 @@ http-response ^https:\/\/javdb\.com\/(?!over18\?) script-path = https://raw.gith
 # PornHub - https://cn.pornhub.com
 http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path = https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js, requires-body = true, tag = PornHub
 
+# ----------- ----------- #
+# 91porny(91porny.com)  
+http-response ^https?:\/\/91porny\.com\/($|(video|search).*$) script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/91porny.js, requires-body = true, tag = 91porny
+
+
 [MitM]
-hostname = missav.ai, missav.ws, 18hlw.com, asserts.avple.tv, javdb.com, *.pornhub.com
+hostname = missav.ai, missav.ws, 18hlw.com, asserts.avple.tv, javdb.com, *.pornhub.com, 91porny.com
