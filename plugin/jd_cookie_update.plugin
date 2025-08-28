@@ -1,0 +1,18 @@
+#!name = 更新server京东cookie
+#!desc = server cookie供微信客服使用
+#!openUrl = 
+#!author = firstmetcs[https://github.com/firstmetcs]
+#!tag = 功能增强
+#!system = 
+#!system_version = 
+#!loon_version = 3.3.2(877)
+#!homepage = https://github.com/firstmetcs/Loon/
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JD.png
+#!date = 2025-08-27 15:58
+
+[Script]
+http-response ^https:\/\/api\.m\.jd\.com\/api\/appPublishUpgrade script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/jd_cookie_update.js, requires-body = true, tag = 更新cookie
+
+
+[MitM]
+hostname = api.m.jd.com
