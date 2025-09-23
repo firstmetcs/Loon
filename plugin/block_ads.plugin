@@ -172,6 +172,7 @@ https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-de
 # > 微博补充 (hostname = api.weibo.cn)
 ^https?:\/\/api\.weibo\.cn\/2\/statuses\/container_detail\? response-body-json-jq '.pageHeader.data.items |= map(select(.data.is_ad_card != 1))'
 ^https?:\/\/api\.weibo\.cn\/2\/statuses\/container_detail_comment\? response-body-json-jq '.items |= map(select(.type != "trend"))'
+^https?:\/\/api\.weibo\.cn\/2\/statuses\/container_detail_forward\? response-body-json-jq '.items |= map(select(.data.blog.is_ad != 1))'
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
