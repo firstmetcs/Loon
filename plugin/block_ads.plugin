@@ -166,6 +166,8 @@ https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-de
 ^https:\/\/tcmobileapi\.17usoft\.com\/userextend\/member\/myIndex\/feeds reject-dict
 # 搜索框热词
 ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getsearchboxtext reject-dict
+# 我的页面弹窗
+^https:\/\/tcmobileapi\.17usoft\.com\/userextend\/member\/screenPop reject-dict
 
 # >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
 
