@@ -8,7 +8,7 @@
 #!loon_version = 3.3.4(898)
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
-#!date = 2025-10-14 13:08:22
+#!date = 2025-11-11 17:37:09
 
 [Rule]
 
@@ -47,6 +47,10 @@ DOMAIN,openapi.boc.cn,REJECT
 # hostname = gab.122.gov.cn
 #^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery reject
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ reject
+
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+
+^https?:\/\/aiot-rpc\.ankasa\.cn\/app\/v1\.0\/lumi\/app\/banner\/config\/get reject
 
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 
@@ -186,7 +190,7 @@ https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-de
 
 # > 小翼管家
 ^https?:\/\/zjh5api\.ott4china\.com:8091\/cp-api\/view\/config\/pos reject
-^https?:\/\/zjh5api\.ott4china\.com:8091\/cp-api\/view\/template response-body-json-jq 'if .body.item.code == "T0065" then .body.item.posList[].contents = [] else .body.item.posList |= map(select(.type != "99")) | .body.item.posList |= map(if .id == 61219 then .contents |= map(select(.id == 100837)) else . end) end'
+^https?:\/\/zjh5api\.ott4china\.com:8091\/cp-api\/view\/template response-body-json-jq 'if .body.item.code == "T0065" then .body.item.posList[].contents = [] else .body.item.posList |= map(select(.type != "99" and .type != "6" and .type != "7")) | .body.item.posList |= map(if .id == 61219 then .contents |= map(select(.id == 100837)) else . end) end'
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
