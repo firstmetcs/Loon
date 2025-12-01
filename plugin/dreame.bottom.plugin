@@ -12,5 +12,8 @@
 # 开屏广告
 ^https?:\/\/cn\.iot\.dreame\.tech:13267\/dreame-product\/public\/advertisement\/v1\/list-by-position reject-dict
 
+# 首页banner
+^https?:\/\/cn-mall\.dreame\.tech\/dreame-mall\/api\/v1\/tag\/list reject-dict
+
 [MITM]
-hostname = cn.iot.dreame.tech
+hostname = cn.iot.dreame.tech, cn-mall.dreame.tech
