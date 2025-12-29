@@ -7,7 +7,7 @@
 
 [Rewrite]
 # 删除产品、商城、探索按钮
-^https:\/\/cn\.iot\.dreame\.tech:13267\/dreame-product\/public\/common-plugin$ response-body-json-jq '.data.url = "https://github.com/firstmetcs/Loon/raw/main/plugin/static/1fac49e02bbed88e594d6d7247469136_3f98a0c192ec2ba7962777a11d869c66___UNI__EDB922E.zip" | .data.md5 = "88e1f6169db1425498f7f0493290261f"'
+^https:\/\/cn\.iot\.dreame\.tech:13267\/dreame-product\/public\/common-plugin$ response-body-json-jq '.data.url = "https://github.com/firstmetcs/Loon/raw/main/plugin/static/7ee56930e44e6e3b31ab152f298a4ded___UNI__EDB922E.zip" | .data.md5 = "79e51897b8c7885307d66c52fc18aacb"'
 
 # 开屏广告
 ^https?:\/\/cn\.iot\.dreame\.tech:13267\/dreame-product\/public\/advertisement\/v1\/list-by-position reject-dict
