@@ -95,9 +95,9 @@ https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-de
 ^https?:\/\/nyuwa\.dsmxp\.com\/nyuwa\/advertisement\/getInfo response-body-json-jq '.data = []'
 ^https?:\/\/vueh5\.dsmxp\.com\/nyuwa_api\/nyuwa\/banner\/list\/user\/page response-body-json-jq '.data = []'
 ^https?:\/\/vueh5\.dsmxp\.com\/nyuwa_api\/nyuwa\/mall\/item\/cloudProductEntranceList response-body-json-jq '.data = []'
-^https?:\/\/vueh5\.dsmxp\.com\/nyuwa_api\/nyuwa\/myself\/displayRecommendedExperts response-body-json-jq '.data |= map(.displayRecommendedExperts=false)'
 ^https?:\/\/nyuwa\.dsmxp\.com\/nyuwa\/deviceV2\/lock\/detailAndConfigV3 response-body-json-jq '.data |= map(.bannerViewList=[]|del(.appBottomBarEntranceInfo))'
 ^https?:\/\/nyuwa\.dsmxp\.com\/nyuwa\/advertise\/get response-body-json-jq '.data = []'
+^https?:\/\/vueh5\.dsmxp\.com\/nyuwa_api\/nyuwa\/advertise\/get response-body-json-jq '.data = []'
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
 
