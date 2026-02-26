@@ -1,6 +1,6 @@
 #!name=去广告补充
-#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：12123, 北京一卡通, 贝壳找房, 大麦, 豆瓣, 动卡空间, 德施曼, 饿了么, 盒马, 建设银行, 乐刻, 同程旅行, v2ex, 小翼管家, 招商银行, 掌上生活, 中国银行, 智慧停车场管理系统, 中国联通, 中国移动
-#!rule-details=12123, 北京一卡通, 贝壳找房, 大麦, 豆瓣, 动卡空间, 德施曼, 饿了么, 盒马, 建设银行, 乐刻, 同程旅行, v2ex, 小翼管家, 招商银行, 掌上生活, 中国银行, 智慧停车场管理系统, 中国联通, 中国移动
+#!desc=针对部分APP和小程序广告进行拦截，补充【可莉🅥】去广告中没有的规则，包括：12123, aqara, 北京一卡通, 贝壳找房, 大麦, 豆瓣, 动卡空间, 德施曼, 饿了么, 盒马, 建设银行, 乐刻, 同程旅行, v2ex, 小翼管家, 招商银行, 掌上生活, 中国银行, 智慧停车场管理系统, 中国联通, 中国移动
+#!rule-details=12123, aqara, 北京一卡通, 贝壳找房, 大麦, 豆瓣, 动卡空间, 德施曼, 饿了么, 盒马, 建设银行, 乐刻, 同程旅行, v2ex, 小翼管家, 招商银行, 掌上生活, 中国银行, 智慧停车场管理系统, 中国联通, 中国移动
 #!author=奶思[https://github.com/fmz200], firstmetcs[https://github.com/firstmetcs/Loon]
 #!tag = 去广告
 #!system = 
@@ -8,7 +8,7 @@
 #!loon_version = 3.3.4(898)
 #!homepage=https://github.com/firstmetcs/Loon/
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/adblock.png
-#!date = 2026-01-14 08:47:02
+#!date = 2026-02-26 11:06:00
 
 [Rule]
 
@@ -50,7 +50,8 @@ DOMAIN, adv.ccb.com, REJECT
 
 # >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
 
-^https?:\/\/aiot-rpc\.ankasa\.cn\/app\/v1\.0\/lumi\/app\/banner\/config\/get reject
+# > aqara
+^https?:\/\/aiot-rpc\.ankasa\.cn\/app\/v1\.0\/lumi\/app\/banner\/config\/get response-body-json-jq '.result=[]'
 
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 
@@ -258,4 +259,4 @@ https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-de
 http-response ^https?:\/\/.*v2ex\.com\/($|t\/\d+) script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/v2ex_remove_ads.js, requires-body = true, tag = v2ex
 
 [MitM]
-hostname = gab.122.gov.cn, appprod.bmac.com.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, ump.sz.creditcard.ecitic.com, m.creditcard.ecitic.com, nyuwa.dsmxp.com, vueh5.dsmxp.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, api.weibo.cn, zjh5api.ott4china.com, s3gw.cmbimg.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, adver.cxzntc.com, api.zzspider.com, wx.gateway.cxyun.net.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn, *.mbs.boc.cn, *.v2ex.com, v2ex.com
+hostname = gab.122.gov.cn, aiot-rpc.ankasa.cn, appprod.bmac.com.cn, apps.api.ke.com, acs.m.taobao.com, amdc.m.taobao.com, api.douban.com, ump.sz.creditcard.ecitic.com, m.creditcard.ecitic.com, nyuwa.dsmxp.com, vueh5.dsmxp.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, lens.leoao.com, acs.m.taobao.com, acs-m.freshippo.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com, api.weibo.cn, zjh5api.ott4china.com, s3gw.cmbimg.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com, adver.cxzntc.com, api.zzspider.com, wx.gateway.cxyun.net.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, client.app.coc.10086.cn, app.10086.cn, *.mbs.boc.cn, *.v2ex.com, v2ex.com
