@@ -1,9 +1,10 @@
 #!name=追觅app精简去广告
-#!desc=删除产品、商城、探索按钮，去除开屏广告
+#!desc=删除产品、商城、探索按钮，去除开屏广告，阻止桌面图标替换
 #!author=shuntou[https://github.com/shuntou/DREAME.Bottom], firstmetcs[https://github.com/firstmetcs/Loon]
 #!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8c/76/22/8c7622fd-3411-0f04-0f9e-093195d49fd3/AppIcon-0-0-1x_U007ephone-0-1-0-0-85-220.png/104x104bb.png
 #!homepage=https://github.com/firstmetcs/Loon
 #!raw-url=https://github.com/firstmetcs/Loon/raw/main/plugin/dreame.bottom.plugin
+#!date=2026-03-19 15:06:09
 
 [Rewrite]
 # 删除产品、商城、探索按钮
@@ -14,6 +15,9 @@
 
 # 首页banner
 ^https?:\/\/cn-mall\.dreame\.tech\/dreame-mall\/api\/v1\/tag\/list reject-dict
+
+# 阻止桌面图标替换
+^https:\/\/cn\.iot\.dreame\.tech:13267\/dreame-system\/dreame-app\/setting\/query$ response-body-json-del data.appIconConfig
 
 [MITM]
 hostname = cn.iot.dreame.tech, cn-mall.dreame.tech
