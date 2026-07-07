@@ -8,7 +8,7 @@
 #!loon_version = 3.3.2(877)
 #!homepage = https://github.com/firstmetcs/Loon/
 #!icon = https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/ban.png
-#!date = 2026-06-02 16:29:25
+#!date = 2026-07-07 08:55:06
 
 # 2024-11-29 01:37
 # https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/18hlw.snippet
@@ -24,34 +24,29 @@
 [Rewrite]
 # -----------Rucu6----------- #
 # PornHub (https://cn.pornhub.com/) //*.pornhub.com
-^https:\/\/(?:cn|www)\.pornhub\.com\/_xa\/ads(_batch)?\? reject
+^(https:\/\/cn\.pornhub\.com\/view_video\.php\?viewkey=[^&]+)&.*$ 302 $1
+^https:\/\/www\.pornhub\.com\/ 302 https://cn.pornhub.com/
+^https:\/\/cn\.pornhub\.com\/(?:interstitial|_xa\/ads) reject-dict
 
 # Avple 跳转弹窗 //asserts.avple.tv
 ^https:\/\/asserts\.avple\.tv\/file\/avple-images\/ad\.js reject
 
-# -----------ddgksf2013----------- #
-# PornHub - https://cn.pornhub.com
-^https?:\/\/(cn|www)\.pornhub\.com\/_xa\/ads reject-dict
-
-# -----------limbopro----------- #
-# missav 播放页弹窗
-https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} reject
-# missav 直播跳出广告
-https://creative.live.missav.com/widgets/Spot/lib.js reject
-
 [Script]
 
-# -----------ZenmoFeiShi----------- #
-# 黑料网
-http-response ^https:\/\/18hlw\.com\/?$ script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/18hlw.js, requires-body = true, tag = 黑料不打烊
-http-response ^https:\/\/18hlw\.com\/archives\/\d+\.html script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/18hlw.js, requires-body = true, tag = 黑料不打烊
-
 # -----------RuCu6----------- #
-# JavDB //javdb.com
-http-response ^https:\/\/javdb\.com\/(?!over18\?) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/WebPage/JavDB.js, requires-body = true, tag = JavDB
+# ======= ooxx ======= #
+# 黑料网 //18hlw.com, 8olbt.imsatcmn.cc
+http-response ^https:\/\/(?:18hlw\.com|8olbt\.imsatcmn\.cc)\/ script-path=https://rucu6.pages.dev/Scripts/webpage/myblockads.js, requires-body=true, binary-body-mode=false, timeout=10, tag=18hlw_web_ads
 
-# PornHub - https://cn.pornhub.com
-http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path = https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js, requires-body = true, tag = PornHub
+# JavDB //javdb.com
+http-response ^https:\/\/javdb\.com\/(?!over18\?) script-path=https://rucu6.pages.dev/Scripts/webpage/myblockads.js, requires-body=true, binary-body-mode=false, timeout=10, tag=javdb_web_ads
+
+# MissAV //missav.ai, missav.fans, missav.ws
+http-response ^https:\/\/missav\.(?:ai|fans|ws)\/(?!favicon)(?!(build|fonts|img|js|api|cdn-cgi)\/). script-path=https://rucu6.pages.dev/Scripts/webpage/missav.js, requires-body=true, binary-body-mode=false, timeout=10, tag=missav_web_ads
+
+# PornHub //*.pornhub.com
+http-response ^https:\/\/cn\.pornhub\.com\/ script-path=https://rucu6.pages.dev/Scripts/webpage/pornhub.js, requires-body=true, binary-body-mode=false, timeout=10, tag=pornhub_web_ads
+
 
 # -----------limbopro----------- #
 # 91porny(91porny.com)  
@@ -59,4 +54,4 @@ http-response ^https?:\/\/91porny\.com\/($|(video|search).*$) script-path = http
 
 
 [MitM]
-hostname = *.cloudfront.net, missav.com, 18hlw.com, asserts.avple.tv, javdb.com, *.pornhub.com, 91porny.com
+hostname = *.cloudfront.net, missav.ws, 18hlw.com, asserts.avple.tv, javdb.com, *.pornhub.com, 91porny.com
