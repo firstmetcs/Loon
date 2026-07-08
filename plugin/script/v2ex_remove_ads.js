@@ -28,6 +28,9 @@ var body = $response.body.replace(
       div[class^="wwads-"]{
         display: none !important;
       }
+      div[id^="pro-campaign-container"]{
+        display: none !important;
+      }
     </style>`
 );
 $done({ body });
