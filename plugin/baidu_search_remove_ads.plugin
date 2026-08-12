@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/limbopro/Adblock4limbo
 #!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/baidu.png
-#!date=2025-07-14 14:21:35
+#!date=2026-08-11 10:24:15
 
 [Rewrite]
 
@@ -19,11 +19,11 @@
 ^https?:\/\/efe-h2\.cdn\.bcebos\.com\/ceug\/resource\/res\/ reject
 
 [Script]
-
+http-request ^https:\/\/boxer\.baidu\.com\/scheme\?scheme script-path=https://rucu6.pages.dev/Scripts/baidu/baiduNoRedirect.js, requires-body=true, binary-body-mode=false, timeout=10, tag=BaiduBoxer
 # 搜索首页广告(www.baidu.com)  
 http-response https?:\/\/(www|m)\.baidu\.com(/$|\/\?ref.*)  script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/baidu_search_remove_ads.js, requires-body = true, tag = 搜索首页
 # 搜索结果广告(www.baidu.com)  
 http-response https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)  script-path = https://raw.githubusercontent.com/firstmetcs/Loon/main/plugin/script/baidu_search_remove_ads.js, requires-body = true, tag = 搜索结果
 
 [MitM]
-hostname=s.bdstatic.com, efe-h2.cdn.bcebos.com, www.baidu.com, m.baidu.com
+hostname=s.bdstatic.com, efe-h2.cdn.bcebos.com, boxer.baidu.com, www.baidu.com, m.baidu.com
