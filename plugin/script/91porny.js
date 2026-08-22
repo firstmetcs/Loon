@@ -1,5 +1,5 @@
 const Injection = `var css = {
-    porny91: "div#po-s0, div#po-s1, div#po-s2, div#po-s2, div#po-link1, div#po-s3, div#po-s5, .colVideoList:has(a[target=_blank]) {display: none!important;}", // 91porny
+    porny91: ".container-fluid.mb-3.p-0, .need_grid_img, .container-fluid.mb-0.p-m, .container-fluid.mb-0.p-0, a[target*='_blank'], img[src*='.gif'], .jsv.jsv-g1.mb-0, .alert, button[aria-label='Close'], div:has(> style) {display: none!important;}", // 91porny
 }
         
 
