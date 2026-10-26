@@ -1,0 +1,28 @@
+#!name=跳过代理检测
+#!desc=跳过部分应用的代理检测，网上国网、多看阅读、顺丰金融、广东农信、丰云行、中国银行缤纷生活、通信行程卡 app 、趣智校园、趣听音乐、光大手机银行、掌上 12333 、沃视频、建行生活、沃小号、拉勾招聘、中国农业银行、扇贝单词消息中心、成都公积金、中国邮政储蓄银行、中国广电
+#!author=sds7ss[https://www.v2ex.com/t/1046329#r_14810232]
+#!homepage=https://github.com/firstmetcs/Loon/
+#!icon=https://raw.githubusercontent.com/firstmetcs/Loon/main/icons/bypass.png
+
+[General]
+
+# www.baidu.com：网上国网、多看阅读、顺丰金融、广东农信、丰云行、中国银行缤纷生活、通信行程卡 app 、趣智校园、趣听音乐、光大手机银行、掌上 12333 、沃视频
+# yunbusiness.ccb.com 建行生活
+# wxh.wo.cn：沃小号
+# gate.lagou.com：拉勾招聘
+# www.abchina.com.cn 中国农业银行
+# www.shanbay.com 扇贝单词消息中心
+# www.google.com 成都公积金
+# login-service.mobile-bank.psbc.com,mobile-bank.psbc.com 中国邮政储蓄银行
+# easy-login.10099.com.cn 中国广电
+
+skip-proxy = www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com
+real-ip = easy-login.10099.com.cn
+
+# 注意事项
+# - 在此模块中被跳过代理的域名，MitM和Rewrite可能失效
+# - 如: www.baidu.com 等
+
+
+[Rule]
+DOMAIN, msmp.abchina.com.cn, REJECT
