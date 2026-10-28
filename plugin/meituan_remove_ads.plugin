@@ -1,0 +1,80 @@
+#!name = 美团去广告
+#!desc = 净化开屏、去除搜索热词、去除发现热词、去除美团热搜、去除底部视频，小团ai tap 栏按钮、去除购物页顶部横幅和购物车底部的推流内容、去除我的页面底部推荐
+#!author=ZenmoFeiShi
+#!homepage=https://github.com/ZenmoFeiShi/Qx
+#!tag=去广告
+#!system = 
+#!loon_version=3.5.1
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTuanItakeaway.png
+#!date = 2026-10-27
+
+[Rule]
+# ---------- 域名拦截：广告 / 埋点 / HTTPDNS ----------
+DOMAIN,shark-mt.meituan.com,REJECT
+DOMAIN,shark-default.meituan.com,REJECT
+DOMAIN,shark-dp.meituan.com,REJECT
+DOMAIN,shark-ps.meituan.com,REJECT
+DOMAIN,shark-wm.sankuai.com,REJECT
+DOMAIN,shark.dianping.com,REJECT
+# mquic-*.meituan.com（等价的 DOMAIN-WILDCARD 写法需 Loon 3.5.3 build 1008+）
+DOMAIN-KEYWORD,mquic-,REJECT
+DOMAIN,httpdnsmultiapi.meituan.com,REJECT
+DOMAIN,httpdnsmultiapivip.meituan.com,REJECT
+DOMAIN,httpdns.meituan.com,REJECT
+DOMAIN,httpdnsvip.meituan.com,REJECT
+DOMAIN,dnspod.meituan.httpdns.qcloud.com,REJECT
+DOMAIN,dnspod.meituan.httpdns.start.qcloud.com,REJECT
+
+# ---------- IP 拦截：广告 / 统计服务器 ----------
+IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+IP-CIDR,202.90.110.46/32,REJECT,no-resolve
+IP-CIDR,202.90.108.69/32,REJECT,no-resolve
+IP-CIDR,202.90.110.45/32,REJECT,no-resolve
+IP-CIDR,202.90.108.68/32,REJECT,no-resolve
+IP-CIDR,202.90.110.48/32,REJECT,no-resolve
+IP-CIDR,202.90.108.67/32,REJECT,no-resolve
+IP-CIDR,202.90.110.36/32,REJECT,no-resolve
+IP-CIDR,202.90.108.54/32,REJECT,no-resolve
+IP-CIDR,202.90.108.55/32,REJECT,no-resolve
+IP-CIDR,203.76.217.51/32,REJECT,no-resolve
+IP-CIDR,203.76.217.53/32,REJECT,no-resolve
+IP-CIDR,203.76.217.241/32,REJECT,no-resolve
+IP-CIDR,203.76.217.243/32,REJECT,no-resolve
+IP-CIDR,103.202.146.30/32,REJECT,no-resolve
+IP-CIDR,103.202.146.49/32,REJECT,no-resolve
+IP-CIDR,101.50.8.64/32,REJECT,no-resolve
+IP-CIDR,103.63.160.64/32,REJECT,no-resolve
+IP-CIDR,103.63.160.69/32,REJECT,no-resolve
+IP-CIDR,103.37.155.77/32,REJECT,no-resolve
+IP-CIDR,103.37.155.60/32,REJECT,no-resolve
+IP-CIDR,111.230.0.200/32,REJECT,no-resolve
+IP-CIDR,139.9.47.231/32,REJECT,no-resolve
+IP-CIDR,121.37.4.167/32,REJECT,no-resolve
+IP-CIDR,119.29.126.219/32,REJECT,no-resolve
+IP-CIDR,106.55.217.56/32,REJECT,no-resolve
+IP-CIDR,103.37.152.224/32,REJECT,no-resolve
+IP-CIDR,119.29.48.215/32,REJECT,no-resolve
+IP-CIDR,42.193.128.160/32,REJECT,no-resolve
+IP-CIDR6,2405:1480:3000:303b::303b/128,REJECT,no-resolve
+IP-CIDR6,2405:1480:1000:3::1e/128,REJECT,no-resolve
+IP-CIDR6,2405:1480:1000:4::15/128,REJECT,no-resolve
+IP-CIDR6,2402:4e00:40:40::2:373/128,REJECT,no-resolve
+
+[Rewrite]
+# ---------- HTTPDNS 接口直接拒绝，防止 App 绕过上面的 DNS 拦截 ----------
+^https?:\/\/(httpdns|httpdnsvip|httpdnsmultiapi|httpdnsmultiapivip)\.meituan\.com\/ reject
+^http:\/\/103\.37\.155\.60\/fetch reject
+
+[Script]
+# 原始 MT.js 与 Quantumult X / Surge / Loon 脚本 API 通用（$request、$response、$done），无需修改
+http-response ^https?:\/\/apimobile\.meituan\.com\/aggroup\/indexTab script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-首页金刚位
+http-response ^https?:\/\/feedguess\.meituan\.com\/lycoris\/scene\/(gwc_feed1_2265|personalcenter_2154)(\?|$) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-推荐信息流
+http-response ^https?:\/\/mt-personalcenter\.meituan\.com\/usercenter\/display script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-我的页
+http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-搜索默认词
+http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/hotword\/city\/divide\/hotrecommend\/ script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-搜索热词
+http-response ^https?:\/\/assistify\.meituan\.com\/assistant\/getAppClientHornConfig script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-AI技能
+http-response ^https?:\/\/mop\.meituan\.com\/mop\/entry\/shoppingCartEntry script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-购物车Banner
+http-response ^https?:\/\/mop\.meituan\.com\/api\/entryModule\/startupPicture script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,timeout=10,enable=true,tag=美团-开屏图
+
+[MitM]
+hostname = apimobile.meituan.com,feedguess.meituan.com,mt-personalcenter.meituan.com,mop.meituan.com,assistify.meituan.com,httpdns.meituan.com,httpdnsvip.meituan.com,httpdnsmultiapi.meituan.com,httpdnsmultiapivip.meituan.com
