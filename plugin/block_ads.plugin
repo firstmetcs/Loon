@@ -32,7 +32,7 @@ DOMAIN, adv.ccb.com, REJECT
 # > 中国银行
 # 需卸载重装，有缓存
 # 屏蔽首页杂七杂八的推荐和热门活动等
-#DOMAIN,openapi.boc.cn,REJECT
+DOMAIN,openapi.boc.cn,REJECT
 
 [Rewrite]
 
@@ -226,8 +226,8 @@ https?:\/\/oss\.taopiaopiao\.com\/combo\/app_home_.*\.json response-body-json-de
 # 首页广告和主题
 #^https?:\/\/cdn1\.mbs\.boc\.cn\/ubas-mgateway-static\/images\/\/theme\/ reject
 
-^https?:\/\/cdn1\.mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+\.jpg reject-dict
-^https?:\/\/cdn1\.mbs\.boc\.cn\/ubas-mgateway-static\/images\/\/theme\/ reject-dict
+#^https?:\/\/cdn1\.mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+\.jpg reject-dict
+#^https?:\/\/cdn1\.mbs\.boc\.cn\/ubas-mgateway-static\/images\/\/theme\/ reject-dict
 
 [Script]
 
